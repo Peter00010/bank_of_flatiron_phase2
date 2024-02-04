@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import axios from 'axios';
 
 const AddTransactionForm = ({ onAddTransaction }) => {
     const [description, setDescription] = useState('');
@@ -16,15 +15,25 @@ const AddTransactionForm = ({ onAddTransaction }) => {
         };
 
         try {
-            const response = await axios.post('http://localhost:3000/transactions', newTransaction);
-            console.log('Transaction added successfully:', response.data);
+            const response = await fetch('http://localhost:3000/transactions', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(newTransaction),
+            });
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            const data = await response.json();
+            console.log('Transaction added successfully:', data);
 
             // Clear form fields
             setDescription('');
             setCategory('');
             setAmount('');
 
-            onAddTransaction(response.data);
+            onAddTransaction(data);
         } catch (error) {
             console.error('Error adding transaction:', error);
         }

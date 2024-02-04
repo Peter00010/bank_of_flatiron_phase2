@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
 
 const TransactionList = () => {
     const [transactions, setTransactions] = useState([]);
     const [searchTerm, setSearchTerm] = useState('');
 
     useEffect(() => {
-        axios.get('http://localhost:3000/transactions')
-            .then(response => {
-                setTransactions(response.data);
+        fetch('http://localhost:3000/transactions')
+            .then(response => response.json())
+            .then(data => {
+                setTransactions(data);
             })
             .catch(error => {
                 console.error('Error fetching transactions:', error);
@@ -24,8 +24,13 @@ const TransactionList = () => {
     };
 
     const handleDeleteTransaction = id => {
-        axios.delete(`http://localhost:3000/transactions/${id}`)
+        fetch(`http://localhost:3000/transactions/${id}`, {
+            method: 'DELETE',
+        })
             .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
                 // Update the transactions state by filtering out the deleted transaction
                 const updatedTransactions = transactions.filter(transaction => transaction.id !== id);
                 setTransactions(updatedTransactions);
@@ -74,10 +79,3 @@ const TransactionList = () => {
 };
 
 export default TransactionList;
-
-
-
-
-
-
-
