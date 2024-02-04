@@ -1,0 +1,103 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: darkgray;
+    margin: 0;
+    padding: 0;
+}
+
+.heading{
+    text-align: center;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.table th,
+.table td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ccc;
+}
+
+.table th {
+    background-color: #f4f4f4;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input[type="text"] {
+    width: 50%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.form-group .amount{
+    border-radius: 4px;
+    font-size: 15px;
+    padding: 5px;
+}
+
+.form-group .add{
+    font-size: 20px;
+    margin: 5px;
+    padding: 5px;
+    cursor: pointer;
+    background-color: black;
+    color: #fff;
+    border: solid #fff 1px;
+    border-radius: 4px;
+    transition: background-color .4s ease-in-out;
+}
+
+.form-group .add:hover{
+    background-color: #fff;
+    color: black;
+    border: solid  black 1px;
+}
+.search-bar {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+    border-radius: 12px;
+}
+
+.error-message {
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.deletebtn{
+    font-size: 15px;
+    border: none;
+    border-radius: 10px;
+    padding: 7px;
+    cursor: pointer;
+    transition: background-color .4s ease-in-out;
+}
+
+.deletebtn:hover{
+    background-color: black;
+    color: #fff;
+}
