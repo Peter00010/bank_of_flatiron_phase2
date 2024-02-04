@@ -32,6 +32,7 @@ Bank Of FlatIron Transaction Manager is a simple web application that allows use
 
     ```bash
     npm install
+    npm install axios
     ```
 
 ## Usage
