@@ -8,7 +8,6 @@ const App = () => {
     const [transactions, setTransactions] = useState([]);
 
     const handleAddTransaction = (newTransaction) =>{
-        // Update the transactions state with the new transaction
         setTransactions([...transactions, newTransaction]);
     };
 

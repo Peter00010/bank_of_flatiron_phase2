@@ -16,7 +16,6 @@ const AddTransactionForm = ({ onAddTransaction }) => {
         };
 
         try {
-            // Send POST request to add the new transaction
             const response = await axios.post('http://localhost:3000/transactions', newTransaction);
             console.log('Transaction added successfully:', response.data);
 
@@ -25,7 +24,6 @@ const AddTransactionForm = ({ onAddTransaction }) => {
             setCategory('');
             setAmount('');
 
-            // Pass the newly added transaction data to the parent component
             onAddTransaction(response.data);
         } catch (error) {
             console.error('Error adding transaction:', error);

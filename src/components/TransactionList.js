@@ -24,7 +24,6 @@ const TransactionList = () => {
     };
 
     const handleDeleteTransaction = id => {
-        // Send DELETE request to the server
         axios.delete(`http://localhost:3000/transactions/${id}`)
             .then(response => {
                 // Update the transactions state by filtering out the deleted transaction
