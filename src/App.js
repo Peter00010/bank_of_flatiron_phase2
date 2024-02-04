@@ -26,7 +26,7 @@
 import React, { useState } from 'react';
 import TransactionList from './components/TransactionList';
 import AddTransactionForm from './components/AddTransactionForm';
-import './App.css';
+import './components/App.css';
 
 const App = () => {
     const [searchTerm, setSearchTerm] = useState('');
