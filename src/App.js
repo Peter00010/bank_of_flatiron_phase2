@@ -14,7 +14,7 @@ const App = () => {
     return (
         <div>
             <h1 className='heading'>Bank  Of FlatIron</h1>
-            <TransactionList searchTerm={searchTerm} transactions={transactions} /> {/* Pass transactions as prop */}
+            <TransactionList searchTerm={searchTerm} transactions={transactions} /> 
             <AddTransactionForm onAddTransaction={handleAddTransaction} />
         </div>
     );

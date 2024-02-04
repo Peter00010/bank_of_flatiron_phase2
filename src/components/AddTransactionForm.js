@@ -26,16 +26,16 @@ const AddTransactionForm = ({ onAddTransaction }) => {
                 throw new Error('Network response was not ok');
             }
             const data = await response.json();
-            console.log('Transaction added successfully:', data);
+            console.log('Transaction added successfully to the backend:', data);
+
+            onAddTransaction(data);
 
             // Clear form fields
             setDescription('');
             setCategory('');
             setAmount('');
-
-            onAddTransaction(data);
         } catch (error) {
-            console.error('Error adding transaction:', error);
+            console.error('Error adding transaction to the backend:', error);
         }
     };
 

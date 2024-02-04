@@ -31,7 +31,7 @@ const TransactionList = () => {
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
                 }
-                // Update the transactions state by filtering out the deleted transaction
+
                 const updatedTransactions = transactions.filter(transaction => transaction.id !== id);
                 setTransactions(updatedTransactions);
                 console.log('Transaction deleted successfully');
